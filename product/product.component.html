@@ -1,0 +1,39 @@
+<p>product works!</p>
+<form action="" (ngSubmit)="save()" #myform=ngForm>
+    <div><label for="">product id</label>
+
+        <input type="text" name="pid" value="" class="form-control" minlength="1" required [(ngModel)]="model.pid" #proid="ngModel" id=""></div>
+        <div *ngIf="proid.invalid && (proid.dirty || proid.touched)"
+class="alert alert-danger">
+proid is invalid
+</div>
+
+    
+    <div><label for="">product name</label>
+    
+        <input type="text" name="pname" value="" class="form-control" minlength="3" required [(ngModel)]="model.pname" #proname="ngModel" id="">
+        <div *ngIf="proname.invalid && (proname.dirty || proname.touched)"
+        class="alert alert-danger">
+        proname is invalid
+    </div>
+    <div><label for="">product price</label>
+    
+        <input type="number" name="pprice" value="" class="form-control" required [(ngModel)]="model.pprice" #proprice="ngModel" id="">
+        <div *ngIf="proprice.invalid && (proprice.dirty || proprice.touched)"
+        class="alert alert-danger">
+        proprice is invalid
+    </div>
+
+    </div>
+    <div><label for="">product description</label>
+    
+        <input type="text" name="pdes" value="" class="form-control" minlength="3" required [(ngModel)]="model.pdes" #prodes="ngModel" id="">
+        <div *ngIf="prodes.invalid && (prodes.dirty || prodes.touched)"
+        class="alert alert-danger">
+        prodes is invalid
+    </div>
+    </div>
+ 
+    <input type="submit"[disabled]="!myform.form.valid" value="login">
+
+
